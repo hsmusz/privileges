@@ -234,7 +234,7 @@ class Manager
             $scope = substr($scope, 0, -2);
 
             return $subject->permissions->sortbyDesc('level')->first(function ($perm) use ($scope) {
-                return preg_match("/^(${scope}$|${scope}:)/", $perm['scope']);
+                return preg_match("/^({$scope}$|{$scope}:)/", $perm['scope']);
             });
         }
 
